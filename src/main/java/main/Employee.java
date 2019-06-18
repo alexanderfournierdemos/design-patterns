@@ -3,13 +3,9 @@ package main;
 public class Employee {
 
 
-
-
     private final int id;
     private final String name;
     private final String email;
-
-
 
 
     public Employee(
@@ -17,10 +13,10 @@ public class Employee {
             final String newName,
             final String newEmail
 
-    ){
+    ) {
         this.id = newId;
         this.name = newName;
-        this.email= newEmail;
+        this.email = newEmail;
     }
 
 
@@ -42,5 +38,35 @@ public class Employee {
         private String nestedName;
         private String nestedEmail;
 
+
+        public EmployeeBuilder(
+                 int newId
+        )
+        {
+            this.nestedId = newId;
+        }
+
+
+
+
+    public EmployeeBuilder id (int newId){
+        this.nestedId = newId ;
+        return this;
+
     }
-}
+
+    public EmployeeBuilder name(String newName) {
+        this.nestedName = newName;
+        return this;
+    }
+
+    public EmployeeBuilder Email(String newEmail) {
+        this.nestedEmail = newEmail;
+        return this;
+    }
+    
+
+    }
+
+    }
+
